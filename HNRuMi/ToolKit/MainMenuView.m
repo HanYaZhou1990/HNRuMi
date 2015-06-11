@@ -47,7 +47,7 @@
     for (NSInteger i = 0; i < numberOfCell; i ++) {
         NSIndexPath *cellIndexPath = [NSIndexPath indexPathForItem:i inSection:0];
         TitleCollectionCell *cell = (TitleCollectionCell *)[collectionView cellForItemAtIndexPath:cellIndexPath];
-        if (cellIndexPath == indexPath) {
+        if (cellIndexPath.row == indexPath.row && indexPath.section == cellIndexPath.section) {
             cell.backgroundColor = UIColorFromRGB(0xFFAB48);
             cell.cornerColor = UIColorFromRGB(0xf0f0f0);
             _clickedBlock(collectionView,indexPath);
